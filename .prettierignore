@@ -1,0 +1,11 @@
+azure-pipelines-build.yml
+azure-pipelines-uninstall.yml
+Dockerfile
+
+/chart
+/build
+/dist
+
+/node_modules
+
+/src/type/player.d.ts
