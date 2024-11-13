@@ -22,13 +22,11 @@ export function getTopProjects (req: Request, res: Response) {
 }
 
 export function changeProjectByIdInfo(req: Request, res: Response) {
-	const {id} = req.params
+	const { id, slug } = req.params
 	const { collected } = req.body;
-
-
-	const allProjects = funds.flatMap(fund => fund.projects);
-	
-	const project = allProjects.find(project => project.id === +id); 
+  
+	const currentFund = funds.find(fund => slug === fund.slug)
+	const project = currentFund?.projects.find(project => project.id === +id)
 
 	if (!project) {
 		const message = { message: 'Project not found' }
@@ -36,11 +34,10 @@ export function changeProjectByIdInfo(req: Request, res: Response) {
 	}
 
 	if (collected !== undefined && project) {
-			project.collected = collected;
+		project.collected += collected;
 	}
-
-	 res.json({ message: 'Project updated successfully', project });
-}
+		res.json({ message: 'Project updated successfully', project });
+	}
 
 export function getAllProjects(req: Request, res: Response) {
   const allProjects = funds.flatMap(fund => fund.projects);

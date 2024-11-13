@@ -1,7 +1,7 @@
 export interface Project {
 	fundId: number;
 	id: number;
-	projectName: string;
+	name: string;
 	fundraisingGoal: number;
 	purpose: string;
 	collected: number
@@ -16,19 +16,21 @@ export interface Fund {
 	projects: Project [];
 	info: string;
 	imageURL: string
+	slug: string
 }
  
  export const funds: Fund[] = [
 	{
-		"name": "DefendOurNation",
+		"name": "Defend Our Nation",
 		"id": 1,
 		"capital": 4000000,
-		"foundedYear": 2018,
+		 "foundedYear": 2018,
+		"slug": "defend-our-nation",
 		"projects": [
 			{
 				"fundId": 1,
 				"id": 11,
-				"projectName": "Equipment Purchase",
+				"name": "Equipment Purchase",
 				"fundraisingGoal": 7000000,
 				"purpose": "Purchasing advanced military equipment",
 				"collected": 5000000,
@@ -37,7 +39,7 @@ export interface Fund {
 			{
 				"fundId": 1,
 				"id": 12,
-				"projectName": "Technology Development",
+				"name": "Technology Development",
 				"fundraisingGoal": 3000000,
 				"purpose": "Developing new military technologies",
 				"collected": 2000000,
@@ -46,7 +48,7 @@ export interface Fund {
 			{
 				"fundId": 1,
 				"id": 13,
-				"projectName": "Training Programs",
+				"name": "Training Programs",
 				"fundraisingGoal": 2000000,
 				"purpose": "Training programs for new recruits",
 				"collected": 1000000,
@@ -57,15 +59,16 @@ export interface Fund {
 		"imageURL": "https://static.ukrinform.com/photos/2024_02/thumb_files/630_360_1708795836-349.jpg"
 	},
 	{
-		"name": "HeroesHomecoming",
+		"name": "Heroes Home Coming",
 		"id": 2,
 		"capital": 1500000,
 		"foundedYear": 2020,
+		"slug": "heroes-home-coming",
 		"projects": [
 			{
 				"fundId": 2,
 				"id": 21,
-				"projectName": "Reintegration Support",
+				"name": "Reintegration Support",
 				"fundraisingGoal": 1500000,
 				"purpose": "Assisting with the reintegration of soldiers into civilian life",
 				"collected": 800000,
@@ -74,7 +77,7 @@ export interface Fund {
 			{
 				"fundId": 2,
 				"id": 22,
-				"projectName": "Job Placement",
+				"name": "Job Placement",
 				"fundraisingGoal": 1000000,
 				"purpose": "Job placement services for veterans",
 				"collected": 600000,
@@ -83,7 +86,7 @@ export interface Fund {
 			{
 				"fundId": 2,
 				"id": 23,
-				"projectName": "Vocational Training",
+				"name": "Vocational Training",
 				"fundraisingGoal": 500000,
 				"purpose": "Providing vocational training for veterans",
 				"collected": 300000,
@@ -94,15 +97,16 @@ export interface Fund {
 		"imageURL": "https://static.wixstatic.com/media/cf153e_34b7e47a2f2c4c3980f38eadcce0a513~mv2.png/v1/fill/w_1036,h_584,fp_0.50_0.50,q_90,enc_auto/cf153e_34b7e47a2f2c4c3980f38eadcce0a513~mv2.png"
 	},
 	{
-		"name": "MilitaryAidFoundation",
+		"name": "Military Aid Foundation",
 		"capital": 2000000,
 		"foundedYear": 2015,
 		"id": 3,
+		"slug": "military-aid-foundation",
 		"projects": [
 			{
 				"fundId": 3,
 				"id": 31,
-				"projectName": "Medical Supplies",
+				"name": "Medical Supplies",
 				"fundraisingGoal": 2000000,
 				"purpose": "Providing medical supplies to field hospitals",
 				"collected": 1200000,
@@ -111,7 +115,7 @@ export interface Fund {
 			{
 				"fundId": 3,
 				"id": 32,
-				"projectName": "Mental Health",
+				"name": "Mental Health",
 				"fundraisingGoal": 1500000,
 				"purpose": "Counseling services for soldiers",
 				"collected": 900000,
@@ -120,7 +124,7 @@ export interface Fund {
 			{
 				"fundId": 3,
 				"id": 33,
-				"projectName": "Rehabilitation Centers",
+				"name": "Rehabilitation Centers",
 				"fundraisingGoal": 1500000,
 				"purpose": "Building rehabilitation centers for injured soldiers",
 				"collected": 700000,
@@ -131,15 +135,16 @@ export interface Fund {
 		"imageURL": "https://war.ukraine.ua/wp-content/uploads/2022/03/116__A-couple-of-Ukrainian-defenders-are-holding-hands-in-Kyiv-17-March-2022-By-Sergei-Supinsky.jpg"
 	},
 	{
-		"name": "SupportOurTroops",
+		"name": "Support Our Troops",
 		"id": 4,
 		"capital": 5000000,
 		"foundedYear": 2010,
+		"slug": "support-our-troops",
 		"projects": [
 			{
 				"fundId": 4,
 				"id": 41,
-				"projectName": "Frontline Supplies",
+				"name": "Frontline Supplies",
 				"fundraisingGoal": 4000000,
 				"purpose": "Providing essential supplies to troops on the front lines",
 				"collected": 2500000,
@@ -148,7 +153,7 @@ export interface Fund {
 			{
 				"fundId": 4,
 				"id": 42,
-				"projectName": "Veterans Housing",
+				"name": "Veterans Housing",
 				"fundraisingGoal": 3000000,
 				"purpose": "Building housing for homeless veterans",
 				"collected": 1500000,
@@ -158,7 +163,7 @@ export interface Fund {
 			{
 				"fundId": 4,
 				"id": 43,
-				"projectName": "Family Support",
+				"name": "Family Support",
 				"fundraisingGoal": 3000000,
 				"purpose": "Financial aid for families of fallen soldiers",
 				"collected": 2000000,
@@ -169,15 +174,16 @@ export interface Fund {
 		"imageURL": "https://www.knuba.edu.ua/wp-content/uploads/2022/12/%D0%B2%D0%B8%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0.jpg"
 	},
 	{
-		"name": "WarriorReliefFund",
+		"name": "Warrior Relief Fund",
 		"id": 5,
 		"capital": 3000000,
 		"foundedYear": 2012,
+		"slug": "warrior-relief-rund",
 		"projects": [
 			{
 				"fundId": 5,
 				"id": 51,
-				"projectName": "Mental Health Support",
+				"name": "Mental Health Support",
 				"fundraisingGoal": 2000000,
 				"purpose": "Providing mental health support for veterans",
 				"collected": 1500000,
@@ -186,7 +192,7 @@ export interface Fund {
 			{
 				"fundId": 5,
 				"id": 52,
-				"projectName": "Family Counseling",
+				"name": "Family Counseling",
 				"fundraisingGoal": 1000000,
 				"purpose": "Family counseling services for military families",
 				"collected": 500000,
@@ -195,7 +201,7 @@ export interface Fund {
 			{
 				"fundId": 5,
 				"id": 53,
-				"projectName": "Crisis Intervention",
+				"name": "Crisis Intervention",
 				"fundraisingGoal": 1000000,
 				"purpose": "Crisis intervention services for veterans in need",
 				"collected": 700000,
@@ -211,7 +217,7 @@ export const topProjects = [
 	{
     fundId: 1,
     id: 12,
-    projectName: "Technology Development",
+    name: "Technology Development",
     fundraisingGoal: 3000000,
     purpose: "Developing new military technologies",
     collected: 2000000
@@ -219,7 +225,7 @@ export const topProjects = [
   {
     fundId: 2,
     id: 23,
-    projectName: "Vocational Training",
+    name: "Vocational Training",
     fundraisingGoal: 500000,
     purpose: "Providing vocational training for veterans",
     collected: 300000
@@ -227,7 +233,7 @@ export const topProjects = [
   {
     fundId: 3,
     id: 31,
-    projectName: "Medical Supplies",
+    name: "Medical Supplies",
     fundraisingGoal: 2000000,
     purpose: "Providing medical supplies to field hospitals",
     collected: 1200000
@@ -235,7 +241,7 @@ export const topProjects = [
   {
     fundId: 4,
     id: 42,
-    projectName: "Veterans Housing",
+    name: "Veterans Housing",
     fundraisingGoal: 3000000,
     purpose: "Building housing for homeless veterans",
     collected: 1500000
